@@ -7,14 +7,17 @@ import { openWhatsApp, generateCustomQuoteWhatsAppMessage } from '@/utils/whatsa
 import type { CustomQuoteFormData } from '@/types';
 
 const eventCategories = [
-  'Engagement & Ring Ceremony',
-  'Wedding & Mandap Decoration',
-  'Reception Stage Decoration',
+  'For Wedding: Wedding Mandap & Sacred Rituals',
+  'For Wedding: Haldi & Mehendi Celebration',
+  'For Wedding: Ring Ceremony & Engagement',
+  'For Wedding: Reception Stage & Seating',
+  'For Wedding: Complete Wedding Package (All Rituals)',
+  'Birthday Celebration (Kids / Adults)',
   'Baby Shower / Godh Bharai',
-  'Anniversary Celebration',
-  'Naming Ceremony',
+  'Naming Ceremony / Cradle',
+  'Anniversary & Family Milestone',
   'Housewarming / Griha Pravesh',
-  'Proposal & Private Celebration',
+  'Romantic Proposal & Private Event',
   'Other Custom Celebration'
 ];
 

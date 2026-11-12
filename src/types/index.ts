@@ -57,6 +57,11 @@ export interface Service {
   short_description: string;
   image_url?: string;
   category: 'direct' | 'partner';
+  group?: 'wedding' | 'birthday' | 'family' | 'special';
+  group_name?: string;
+  tagline?: string;
+  features?: string[];
+  pricing_note?: string;
   is_active: boolean;
   sort_order: number;
   created_at: string;

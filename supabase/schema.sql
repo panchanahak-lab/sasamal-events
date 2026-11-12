@@ -372,12 +372,14 @@ INSERT INTO addons (name, price, category, max_quantity, sort_order) VALUES
 
 -- Seed Services
 INSERT INTO services (name, slug, description, short_description, category, sort_order) VALUES
-('Birthday Celebrations', 'birthday-celebrations', 'Kids'' birthdays, adult birthdays and themed birthday decoration. We create beautiful setups that make your celebration truly special.', 'Kids'' birthdays, adult birthdays and themed birthday decoration.', 'direct', 1),
-('Engagement & Ring Ceremony', 'engagement-ring-ceremony', 'Elegant engagement stages, ring ceremony decorations and couple seating arrangements that create the perfect setting.', 'Elegant engagement stages, ring ceremony decorations and couple seating.', 'partner', 2),
-('Wedding Decorations', 'wedding-decorations', 'Wedding stages, mandap decoration and venue styling that bring your dream wedding to life with elegance.', 'Wedding stages, mandap decoration and venue styling.', 'partner', 3),
-('Reception Decorations', 'reception-decorations', 'Beautiful reception stages, floral decoration and couple seating that create a stunning atmosphere.', 'Beautiful reception stages, floral decoration and couple seating.', 'partner', 4),
-('Family Functions', 'family-functions', 'Baby showers, anniversaries, naming ceremonies and housewarming celebrations decorated with warmth and care.', 'Baby showers, anniversaries, naming ceremonies and housewarming celebrations.', 'direct', 5),
-('Special Events', 'special-events', 'Proposals, private parties and customised celebrations. Whatever the occasion, we create a personalised experience.', 'Proposals, private parties and customised celebrations.', 'partner', 6);
+('Ring Ceremony & Engagement', 'engagement-ring-ceremony', 'Elegant engagement stages, ring ceremony decorations and couple seating arrangements that create the perfect setting.', 'Elegant engagement stages, ring ceremony decorations and couple seating.', 'partner', 1),
+('Haldi & Mehendi Decoration', 'haldi-mehendi-decorations', 'Vibrant yellow marigold setups, brass urlis, colorful Rajasthani drapes and decorated couple swings.', 'Bright marigold canopies, urli seating, tassel drapes and festive swings.', 'partner', 2),
+('Wedding Mandap Decoration', 'wedding-mandap-decorations', 'Sacred square and dome mandaps styled with fresh marigolds, roses, brass lamps, havan kund and grand aisle pillars.', 'Traditional and modern mandaps, havan kund setup and grand aisle pillars.', 'partner', 3),
+('Reception Stage & Seating', 'reception-decorations', 'Grand reception stages featuring floral walls, geometric LED frames, modern pendants and luxury couple seating.', 'Grand reception stages, floral walls, mood lighting and royal seating.', 'partner', 4),
+('Sangeet & Cocktail Night', 'sangeet-cocktail-decorations', 'Glamorous concert party lighting, neon phrase signs, DJ console styling, and acoustic dancefloor trussing.', 'Neon signs, dance floor trussing, fairy light canopies & cocktail lounges.', 'partner', 5),
+('Birthday Celebrations', 'birthday-celebrations', 'Kids'' birthdays, adult birthdays and themed birthday decoration. Affordable direct packages from ₹1,500.', 'Kids'' birthdays, adult birthdays and themed balloon decoration.', 'direct', 6),
+('Family Functions', 'family-functions', 'Baby showers, anniversaries, naming ceremonies and housewarming celebrations decorated with warmth and care.', 'Baby showers, anniversaries, naming ceremonies and housewarming celebrations.', 'direct', 7),
+('Special Events & Proposals', 'special-events', 'Proposals, private parties and customised celebrations. Whatever the occasion, we create a personalised experience.', 'Terrace candlelit setups, romantic proposals and private events.', 'partner', 8);
 
 -- Seed Demonstration Gallery Images
 INSERT INTO gallery_images (title, description, image_url, category, sort_order) VALUES

@@ -8,12 +8,12 @@ import { getWhatsAppUrl } from '@/utils/format';
 import { generateSimpleWhatsAppMessage } from '@/utils/whatsapp';
 
 const serviceLinks = [
-  { name: 'Birthday Celebrations', path: '/services#birthday' },
-  { name: 'Engagement & Ring Ceremony', path: '/services#engagement' },
-  { name: 'Wedding Decorations', path: '/services#wedding' },
-  { name: 'Reception Decorations', path: '/services#reception' },
-  { name: 'Family Functions', path: '/services#family' },
-  { name: 'Special Events', path: '/services#special' },
+  { name: 'For Wedding: Mandap Decor', path: '/services#wedding-mandap-decorations' },
+  { name: 'For Wedding: Haldi & Mehendi', path: '/services#haldi-mehendi-decorations' },
+  { name: 'For Wedding: Ring Ceremony', path: '/services#engagement-ring-ceremony' },
+  { name: 'For Wedding: Reception Stage', path: '/services#reception-decorations' },
+  { name: 'Birthday Celebrations', path: '/services#birthday-celebrations' },
+  { name: 'Family Functions', path: '/services#family-functions' },
 ];
 
 const quickLinks = [
