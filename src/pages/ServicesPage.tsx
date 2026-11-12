@@ -13,7 +13,7 @@ const weddingSuite = [
     tagline: 'An Intimate Setting for Your Lifelong Promise',
     categoryType: 'Curated Stage Design',
     description: 'Create an enchanting backdrop for your ring exchange. We coordinate bespoke floral arches, couple seating sofas, velvet pedestals, neon signage, and warm ambient lighting suited for banquet halls and garden lawns.',
-    image: 'https://images.unsplash.com/photo-1519741497674-611481863552?w=1000&q=80&fit=crop',
+    image: '/images/ring-ceremony.jpg',
     features: [
       'Bespoke couple seating sofas & velvet stage pedestals',
       'Artificial & fresh floral arches with ring ceremony thematic signage',
@@ -29,7 +29,7 @@ const weddingSuite = [
     tagline: 'Vibrant Traditions, Bright Marigolds & Sunny Celebrations',
     categoryType: 'Thematic Ceremony Decor',
     description: 'Bring boundless joy to your pre-wedding rituals with bright yellow and orange marigold canopies, traditional brass urlis for floral baths, colorful Rajasthani drapes, dreamcatcher backdrops, and decorated couple swings.',
-    image: 'https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=1000&q=80&fit=crop',
+    image: '/images/haldi-ceremony.jpg',
     features: [
       'Traditional brass / fiber urli for the Haldi ceremony',
       'Marigold flower strings, tassel canopies & gota patti hangings',
@@ -45,7 +45,7 @@ const weddingSuite = [
     tagline: 'Sacred Mandaps & Timeless Indian Traditions',
     categoryType: 'Full Event Management',
     description: 'A wedding is a sacred and grand celebration of two families. Our team crafts magnificent square and dome mandaps decorated with fresh marigolds, roses, tuberose garlands, brass lamps, sacred havan kund setup, and regal floral pathways.',
-    image: 'https://images.unsplash.com/photo-1583037189850-1921ae7c6c22?w=1000&q=80&fit=crop',
+    image: '/images/mandap-decoration.jpg',
     features: [
       'Authentic square & dome mandap structural styling',
       'Fresh marigold, rose, and jasmine floral craftsmanship',
@@ -110,12 +110,12 @@ const otherCategories = [
   },
   {
     id: 'special-events',
-    name: 'Special Events & Private Soirees',
-    tagline: 'Romantic Proposals, Intimate Gatherings & VIP Dinners',
-    categoryType: 'Curated Event Management',
-    groupName: 'For Special Events',
-    description: 'Planning a surprise marriage proposal, terrace candlelit dinner, or private cocktail gathering? Sasamal Events designs intimate, tasteful environments with ambient lanterns, rose petal paths, and fairy light canopies.',
-    image: 'https://images.unsplash.com/photo-1469371670807-013ccf25f16a?w=1000&q=80&fit=crop',
+    name: 'Private Functions & Proposals',
+    tagline: 'Romantic Proposals, Intimate Gatherings & Couple Anniversaries',
+    categoryType: 'Curated Intimate Celebrations',
+    groupName: 'Private Functions',
+    description: 'Planning a surprise marriage proposal, terrace candlelit dinner, or intimate anniversary? Sasamal Events designs intimate environments with ambient lanterns, rose petal paths, romantic candles, and intimate seating for two.',
+    image: 'https://images.unsplash.com/photo-1520854221256-17451cc331bf?w=1000&q=80&fit=crop',
     features: [
       'Marry Me marquee letters and ambient candlelit walkways',
       'Terrace canopies with sheer drapes and warm lighting',

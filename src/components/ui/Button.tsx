@@ -1,7 +1,7 @@
 import React from 'react';
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: 'primary' | 'secondary' | 'outline' | 'ghost' | 'gold' | 'whatsapp';
+  variant?: 'primary' | 'secondary' | 'outline' | 'ghost' | 'gold' | 'maroon' | 'whatsapp';
   size?: 'sm' | 'md' | 'lg';
   fullWidth?: boolean;
   children: React.ReactNode;
@@ -23,6 +23,7 @@ export function Button({
     outline: 'border-2 border-gold text-gold hover:bg-gold hover:text-white focus:ring-gold',
     ghost: 'text-charcoal hover:bg-ivory focus:ring-warm-gray',
     gold: 'bg-gold text-white hover:bg-gold-dark focus:ring-gold',
+    maroon: 'bg-[#6B1D2F] text-white hover:bg-[#521321] focus:ring-[#6B1D2F] shadow-sm',
     whatsapp: 'bg-[#25D366] text-white hover:bg-[#20BD5A] focus:ring-[#25D366]',
   };
 

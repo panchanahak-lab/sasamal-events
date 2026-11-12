@@ -177,18 +177,18 @@ export const defaultServices: Service[] = [
     updated_at: '',
   },
 
-  // --- FOR SPECIAL CELEBRATIONS ---
+  // --- FOR PRIVATE FUNCTIONS & PROPOSALS ---
   {
     id: 'svc-special',
-    name: 'Special Events & Proposals',
+    name: 'Private Functions',
     slug: 'special-events',
-    description: 'Surprise marriage proposals with "Marry Me" marquee letters, candlelit terrace dinners, private VIP gatherings, and tailored luxury soirees.',
-    short_description: 'Terrace candlelit setups, romantic proposals and private events.',
+    description: 'Intimate celebrations for 2–5 people: romantic marriage proposals with marquee letters, candlelit terrace dinners, couple anniversaries, and personalized surprise dates.',
+    short_description: 'Intimate romantic proposals, candlelit dates and private celebrations.',
     category: 'partner',
     group: 'special',
-    group_name: 'For Special Events',
-    tagline: 'Bespoke Romantic & Private Settings',
-    image_url: 'https://images.unsplash.com/photo-1469371670807-013ccf25f16a?w=800&h=600&fit=crop',
+    group_name: 'Private Functions',
+    tagline: 'Romantic & Intimate Settings for Two',
+    image_url: 'https://images.unsplash.com/photo-1520854221256-17451cc331bf?w=800&h=600&fit=crop',
     is_active: true,
     sort_order: 8,
     created_at: '',

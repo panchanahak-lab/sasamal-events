@@ -1,191 +1,127 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Sparkles, HeartHandshake, CheckCircle2 } from 'lucide-react';
+import { ArrowRight, Sparkles } from 'lucide-react';
 import { Container } from '@/components/ui/Container';
-import { SectionHeading } from '@/components/ui/SectionHeading';
-import { Button } from '@/components/ui/Button';
-import { defaultServices } from '@/data/defaults';
 import { useStore } from '@/stores/useStore';
 
-type CategoryFilter = 'all' | 'wedding' | 'birthday' | 'family' | 'special';
+export interface ServiceCardData {
+  id: string;
+  title: string;
+  description: string;
+  image: string;
+  link: string;
+  badge?: string;
+}
+
+export const servicesData: ServiceCardData[] = [
+  {
+    id: 'ring-ceremony',
+    title: 'Ring Ceremony',
+    description: 'Elegant engagement stage with bespoke floral arches, romantic couple seating, ambient lighting and personalized backdrops.',
+    image: '/images/ring-ceremony.jpg',
+    link: '/services#engagement-ring-ceremony',
+  },
+  {
+    id: 'haldi-ceremony',
+    title: 'Haldi Ceremony',
+    description: 'Bright yellow festive decoration, yellow drapes, fresh marigold flowers, colorful umbrellas, traditional urli seating and brass accessories.',
+    image: '/images/haldi-ceremony.jpg',
+    link: '/services#haldi-mehendi-decorations',
+  },
+  {
+    id: 'mandap-decoration',
+    title: 'Mandap Decoration',
+    description: 'Traditional sacred wedding mandap with grand pillars, fresh rose and jasmine floral craft, temple bells, holy havan kund and royal aisle styling.',
+    image: '/images/mandap-decoration.jpg',
+    link: '/services#wedding-mandap-decorations',
+  },
+  {
+    id: 'birthday-celebration',
+    title: 'Birthday Celebration',
+    description: 'Colourful balloon arches, customized birthday backdrops, illuminated signage, pastel themes and attractive party decorations starting at ₹1,500.',
+    image: '/images/birthday-celebration.jpg',
+    link: '/packages',
+  },
+  {
+    id: 'family-functions',
+    title: 'Family Functions',
+    description: 'Warm, dignified arrangements for baby showers (Godh Bharai), naming ceremonies, housewarmings, and family anniversaries with elegant dining styling.',
+    image: '/images/family-functions.jpg',
+    link: '/services#family-functions',
+  },
+  {
+    id: 'private-functions',
+    title: 'Private Functions',
+    description: 'Intimate romantic celebrations for 2–5 people: marriage proposals, candlelit anniversary dinners, and terrace dates with candles, lanterns, rose petals, and warm ambiance.',
+    image: '/images/private-functions.jpg',
+    link: '/services#special-events',
+  },
+];
 
 export function ServicesSection() {
-  const [activeTab, setActiveTab] = useState<CategoryFilter>('all');
   const { setQuoteModalOpen } = useStore();
 
-  const filteredServices = activeTab === 'all'
-    ? defaultServices
-    : defaultServices.filter((s) => s.group === activeTab);
-
-  const weddingServices = defaultServices.filter((s) => s.group === 'wedding');
-
   return (
-    <section className="py-20 sm:py-28 bg-white" id="services">
+    <section id="services" className="py-20 sm:py-24 bg-[#FAF8F3]">
       <Container>
-        <SectionHeading
-          subtitle="Celebration Solutions"
-          title="Explore Our Services"
-          description="From dedicated wedding suites (Mandap, Haldi, Ring Ceremony, Reception) to affordable birthday packages and family functions across Navi Mumbai."
-        />
-
-        {/* Category Tabs */}
-        <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-12">
-          <button
-            onClick={() => setActiveTab('all')}
-            className={`px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all duration-200 ${
-              activeTab === 'all'
-                ? 'bg-[#292725] text-white shadow-md'
-                : 'bg-[#FAF8F3] text-[#77716B] hover:text-[#292725] hover:bg-[#EBE7DF]'
-            }`}
-          >
-            All Services ({defaultServices.length})
-          </button>
-
-          <button
-            onClick={() => setActiveTab('wedding')}
-            className={`inline-flex items-center gap-1.5 px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold transition-all duration-200 ${
-              activeTab === 'wedding'
-                ? 'bg-[#C5A46D] text-white shadow-md ring-2 ring-[#C5A46D]/30'
-                : 'bg-[#FAF8F3] text-[#C5A46D] hover:bg-[#C5A46D]/15'
-            }`}
-          >
-            <Sparkles className="w-3.5 h-3.5" />
-            <span>For Wedding ({weddingServices.length})</span>
-          </button>
-
-          <button
-            onClick={() => setActiveTab('birthday')}
-            className={`px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all duration-200 ${
-              activeTab === 'birthday'
-                ? 'bg-[#292725] text-white shadow-md'
-                : 'bg-[#FAF8F3] text-[#77716B] hover:text-[#292725] hover:bg-[#EBE7DF]'
-            }`}
-          >
-            For Birthdays
-          </button>
-
-          <button
-            onClick={() => setActiveTab('family')}
-            className={`px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all duration-200 ${
-              activeTab === 'family'
-                ? 'bg-[#292725] text-white shadow-md'
-                : 'bg-[#FAF8F3] text-[#77716B] hover:text-[#292725] hover:bg-[#EBE7DF]'
-            }`}
-          >
-            For Family Functions
-          </button>
-
-          <button
-            onClick={() => setActiveTab('special')}
-            className={`px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all duration-200 ${
-              activeTab === 'special'
-                ? 'bg-[#292725] text-white shadow-md'
-                : 'bg-[#FAF8F3] text-[#77716B] hover:text-[#292725] hover:bg-[#EBE7DF]'
-            }`}
-          >
-            For Special Events
-          </button>
+        {/* Section Header */}
+        <div className="max-w-2xl mx-auto text-center mb-14 sm:mb-16">
+          <span className="text-xs font-bold tracking-[0.2em] uppercase text-[#C5A46D] block mb-2">
+            What We Do
+          </span>
+          <h2 className="font-heading text-3xl sm:text-5xl font-bold text-[#6B1D2F] tracking-tight mb-4">
+            Celebrations We Create
+          </h2>
+          <div className="w-16 h-0.5 bg-[#C5A46D] mx-auto rounded-full" />
         </div>
 
-        {/* Featured Wedding Spotlight Box when viewing "all" or "wedding" */}
-        {(activeTab === 'all' || activeTab === 'wedding') && (
-          <div className="mb-12 bg-gradient-to-r from-[#292725] via-[#38332E] to-[#292725] rounded-3xl p-6 sm:p-10 text-white shadow-xl relative overflow-hidden border border-[#C5A46D]/30">
-            <div className="absolute top-0 right-0 w-80 h-80 bg-[#C5A46D]/15 rounded-full blur-3xl pointer-events-none" />
-
-            <div className="relative z-10 flex flex-col lg:flex-row lg:items-center justify-between gap-6">
-              <div className="max-w-2xl">
-                <span className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-[#C5A46D]/20 text-[#D4B887] text-xs font-bold uppercase tracking-wider mb-3">
-                  <Sparkles className="w-3.5 h-3.5" />
-                  Featured Collection
-                </span>
-                <h3 className="font-heading text-2xl sm:text-4xl font-bold text-white mb-2 leading-tight">
-                  For Wedding: Complete Ceremonial Decoration Suite
-                </h3>
-                <p className="text-xs sm:text-sm text-white/80 leading-relaxed">
-                  Celebrate every auspicious chapter together. We design coordinated aesthetics across all wedding rituals: <strong>Ring Ceremony & Engagement</strong>, <strong>Haldi & Mehendi Urli setups</strong>, <strong>Traditional Mandap Decoration</strong>, and <strong>Grand Reception Stages</strong>.
-                </p>
-              </div>
-
-              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 shrink-0">
-                <Button
-                  variant="gold"
-                  size="md"
-                  onClick={() => setQuoteModalOpen(true)}
-                  className="shadow-lg whitespace-nowrap"
-                >
-                  Request Wedding Quotation
-                  <ArrowRight className="w-4 h-4 ml-1" />
-                </Button>
-                <Link to="/services#wedding-mandap-decorations">
-                  <button className="w-full sm:w-auto px-5 py-2.5 rounded-xl border border-white/30 text-white text-xs font-semibold hover:bg-white/10 transition-colors">
-                    Explore Wedding Suite
-                  </button>
-                </Link>
-              </div>
-            </div>
-          </div>
-        )}
-
-        {/* Grid of Service Cards */}
+        {/* Six Service Cards Grid (Desktop: 3 cols, Tablet: 2 cols, Mobile: 1 col) */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredServices.map((service) => (
+          {servicesData.map((service) => (
             <div
               key={service.id}
-              className="group bg-[#FAF8F3] rounded-3xl overflow-hidden border border-warm-gray-light/20 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between"
+              className="group bg-white rounded-3xl overflow-hidden border border-[#C5A46D]/20 shadow-sm hover:shadow-xl hover:border-[#6B1D2F]/30 transition-all duration-300 flex flex-col justify-between"
             >
               <div>
-                {/* Image Frame with consistent 4:3 ratio */}
-                <div className="relative aspect-[4/3] overflow-hidden bg-warm-gray-light/10">
+                {/* Image Container with Consistent Aspect Ratio */}
+                <div className="relative aspect-[4/3] w-full overflow-hidden bg-warm-gray/10">
                   <img
-                    src={service.image_url || 'https://images.unsplash.com/photo-1519741497674-611481863552?w=800&h=600&fit=crop'}
-                    alt={service.name}
+                    src={service.image}
+                    alt={service.title}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     loading="lazy"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#292725]/70 via-transparent to-transparent" />
-                  
-                  {/* Category Pill */}
-                  <div className="absolute top-4 left-4 flex gap-1.5">
-                    {service.group === 'wedding' && (
-                      <span className="px-3 py-1 rounded-full bg-[#C5A46D] text-white text-[11px] font-bold tracking-wide uppercase shadow-sm">
-                        For Wedding
-                      </span>
-                    )}
-                    <span className="px-3 py-1 rounded-full bg-white/90 backdrop-blur-sm text-[11px] font-semibold text-[#292725] tracking-wide uppercase shadow-sm">
-                      {service.category === 'direct' ? 'Direct Service' : 'Curated Management'}
-                    </span>
-                  </div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity" />
                 </div>
 
-                {/* Card Body */}
+                {/* Card Content */}
                 <div className="p-6 sm:p-7">
-                  {service.tagline && (
-                    <span className="text-[11px] font-bold uppercase tracking-wider text-[#C5A46D] block mb-1">
-                      {service.tagline}
-                    </span>
-                  )}
-                  <h3 className="font-heading text-xl sm:text-2xl font-bold text-[#292725] mb-2.5 group-hover:text-[#C5A46D] transition-colors">
-                    {service.name}
+                  <h3 className="font-heading text-2xl font-bold text-[#292725] group-hover:text-[#6B1D2F] transition-colors mb-3">
+                    {service.title}
                   </h3>
-                  <p className="text-sm text-[#77716B] leading-relaxed mb-4">
+                  <p className="text-sm text-[#77716B] leading-relaxed line-clamp-3">
                     {service.description}
                   </p>
                 </div>
               </div>
 
-              {/* Card Footer CTA */}
-              <div className="p-6 sm:p-7 pt-0 border-t border-warm-gray-light/15 flex items-center justify-between">
+              {/* Card Footer Action */}
+              <div className="px-6 pb-6 pt-0 flex items-center justify-between border-t border-gray-100 mt-2">
                 <Link
-                  to={`/services#${service.slug}`}
-                  className="inline-flex items-center gap-2 text-sm font-semibold text-[#292725] group-hover:text-[#C5A46D] transition-colors"
+                  to={service.link}
+                  className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-[#6B1D2F] hover:text-[#C5A46D] transition-colors py-2"
                 >
-                  <span>Explore Service Details</span>
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  <span>Explore Details</span>
+                  <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
                 </Link>
 
-                <span className="w-8 h-8 rounded-full bg-white flex items-center justify-center text-[#C5A46D] shadow-sm">
-                  <Sparkles className="w-4 h-4" />
-                </span>
+                <button
+                  type="button"
+                  onClick={() => setQuoteModalOpen(true)}
+                  className="text-xs font-semibold px-3 py-1.5 rounded-full bg-[#FAF8F3] text-[#77716B] hover:bg-[#6B1D2F] hover:text-white transition-all border border-[#C5A46D]/20"
+                >
+                  Enquire
+                </button>
               </div>
             </div>
           ))}

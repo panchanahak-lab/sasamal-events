@@ -1,47 +1,27 @@
 import React from 'react';
 import { HeroSection } from '@/components/home/HeroSection';
 import { ServicesSection } from '@/components/home/ServicesSection';
-import { PackagesSection } from '@/components/home/PackagesSection';
-import { CustomiseSection } from '@/components/home/CustomiseSection';
-import { PremiumSection } from '@/components/home/PremiumSection';
-import { GalleryPreview } from '@/components/home/GalleryPreview';
-import { WhyChooseSection } from '@/components/home/WhyChooseSection';
-import { HowItWorksSection } from '@/components/home/HowItWorksSection';
-import { TestimonialsSection } from '@/components/home/TestimonialsSection';
-import { ContactSection } from '@/components/home/ContactSection';
+import { CelebrationStyleSection } from '@/components/home/CelebrationStyleSection';
+import { CulturalBannerSection } from '@/components/home/CulturalBannerSection';
+import { FeaturesSection } from '@/components/home/FeaturesSection';
 
 export function HomePage() {
   return (
-    <div className="flex flex-col w-full">
-      {/* Section 1: Hero */}
+    <div className="flex flex-col w-full bg-[#FAF8F3] overflow-x-hidden">
+      {/* 1. Hero Section */}
       <HeroSection />
 
-      {/* Section 2: Explore Our Services */}
+      {/* 2. Celebrations We Create (6 service cards) */}
       <ServicesSection />
 
-      {/* Section 3: Affordable Birthday Packages */}
-      <PackagesSection />
+      {/* 3. Discover Your Celebration Style (Minimal Luxury & Enchanted Garden) */}
+      <CelebrationStyleSection />
 
-      {/* Section 4: Interactive Customise Your Decoration Experience */}
-      <CustomiseSection />
+      {/* 4. Indian Cultural Design Banner */}
+      <CulturalBannerSection />
 
-      {/* Section 5: Premium Event Decorations */}
-      <PremiumSection />
-
-      {/* Section 6: Our Work / Gallery */}
-      <GalleryPreview />
-
-      {/* Section 7: Why Choose Sasamal Events */}
-      <WhyChooseSection />
-
-      {/* Section 8: How It Works */}
-      <HowItWorksSection />
-
-      {/* Section 9: Customer Reviews */}
-      <TestimonialsSection />
-
-      {/* Section 10: Contact Section */}
-      <ContactSection />
+      {/* 5. Features Section (3 blocks: Customised Themes, Quality Execution, Navi Mumbai & Beyond) */}
+      <FeaturesSection />
     </div>
   );
 }
