@@ -71,22 +71,6 @@ const weddingSuite = [
     pricingNote: 'Custom Quotation Based on Guest Scale & Stage Size',
     isDirect: false,
   },
-  {
-    id: 'sangeet-cocktail-decorations',
-    name: 'Sangeet & Cocktail Night',
-    tagline: 'High Energy Glamour, Neon Aesthetics & Music',
-    categoryType: 'Curated Party Production',
-    description: 'Turn your sangeet into a breathtaking gala with vibrant concert lighting, neon quote backdrops, DJ console styling, acoustic dancefloor trussing, and cocktail lounge seating.',
-    image: 'https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=1000&q=80&fit=crop',
-    features: [
-      'Neon phrase signage ("Better Together", "Happily Ever After")',
-      'Light bars, strobe effects & DJ booth thematic facade',
-      'Fairy light ceilings and cocktail high-table arrangements',
-      'Custom photo wall backdrop for family selfie-ops',
-    ],
-    pricingNote: 'Custom Quotation Based on Requirements',
-    isDirect: false,
-  },
 ];
 
 const otherCategories = [

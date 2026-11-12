@@ -140,22 +140,6 @@ export const defaultServices: Service[] = [
     created_at: '',
     updated_at: '',
   },
-  {
-    id: 'svc-wedding-sangeet',
-    name: 'Sangeet & Cocktail Night',
-    slug: 'sangeet-cocktail-decorations',
-    description: 'Glamorous party lighting, neon phrase signs, DJ console styling, acoustic dancefloor trussing, and cocktail lounge seating for pre-wedding parties.',
-    short_description: 'Neon signs, dance floor trussing, fairy light canopies & cocktail lounges.',
-    category: 'partner',
-    group: 'wedding',
-    group_name: 'For Wedding',
-    tagline: 'High Energy Glamour & Music',
-    image_url: 'https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=800&h=600&fit=crop',
-    is_active: true,
-    sort_order: 5,
-    created_at: '',
-    updated_at: '',
-  },
 
   // --- FOR BIRTHDAYS CATEGORY ---
   {

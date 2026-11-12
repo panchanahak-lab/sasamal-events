@@ -102,7 +102,7 @@ export function ServicesSection() {
                   For Wedding: Complete Ceremonial Decoration Suite
                 </h3>
                 <p className="text-xs sm:text-sm text-white/80 leading-relaxed">
-                  Celebrate every auspicious chapter together. We design coordinated aesthetics across all wedding rituals: <strong>Ring Ceremony & Engagement</strong>, <strong>Haldi & Mehendi Urli setups</strong>, <strong>Traditional Mandap Decoration</strong>, <strong>Sangeet Lighting</strong>, and <strong>Grand Reception Stages</strong>.
+                  Celebrate every auspicious chapter together. We design coordinated aesthetics across all wedding rituals: <strong>Ring Ceremony & Engagement</strong>, <strong>Haldi & Mehendi Urli setups</strong>, <strong>Traditional Mandap Decoration</strong>, and <strong>Grand Reception Stages</strong>.
                 </p>
               </div>
 
