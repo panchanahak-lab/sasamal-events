@@ -2,10 +2,20 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, ChevronDown, MessageCircle } from 'lucide-react';
 import { Container } from '@/components/ui/Container';
-import { Button } from '@/components/ui/Button';
 import { useStore } from '@/stores/useStore';
 import { getWhatsAppUrl } from '@/utils/format';
 import { generateSimpleWhatsAppMessage } from '@/utils/whatsapp';
+
+function LotusNavbarIcon({ className = 'w-7 h-7' }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M12 21c-2-3-4-7-4-11a4 4 0 0 1 8 0c0 4-2 8-4 11z" />
+      <path d="M12 21c-3-2-8-4-8-9a5 5 0 0 1 7-4" />
+      <path d="M12 21c3-2 8-4 8-9a5 5 0 0 0-7-4" />
+      <path d="M12 17a3 3 0 0 0 0-6 3 3 0 0 0 0 6z" />
+    </svg>
+  );
+}
 
 const serviceDropdownItems = [
   { name: 'Ring Ceremony', path: '/services#engagement-ring-ceremony', desc: 'Bespoke floral arches & couple seating' },
@@ -24,7 +34,7 @@ export function Navbar() {
   const location = useLocation();
 
   useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 20);
+    const handleScroll = () => setIsScrolled(window.scrollY > 15);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -54,30 +64,36 @@ export function Navbar() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? 'bg-[#FAF8F3]/95 backdrop-blur-md shadow-sm border-b border-[#C5A46D]/20 py-2.5'
-          : 'bg-[#FAF8F3]/80 backdrop-blur-sm border-b border-black/5 py-3.5'
+          ? 'bg-[#FAF7F2]/95 backdrop-blur-md shadow-sm border-b border-[#C5A46D]/20 py-2.5'
+          : 'bg-[#FAF7F2]/90 backdrop-blur-sm border-b border-black/5 py-3.5'
       }`}
     >
       <Container className="w-full">
         <nav className="flex items-center justify-between w-full">
-          {/* Brand Logo & Tagline */}
-          <Link to="/" className="flex flex-col group py-1 shrink-0">
-            <span className="font-heading text-lg sm:text-2xl font-bold text-[#6B1D2F] tracking-tight group-hover:text-[#521321] transition-colors leading-none">
-              Sasamal Events
-            </span>
-            <span className="text-[7.5px] sm:text-[10px] font-semibold tracking-[0.18em] sm:tracking-[0.22em] uppercase text-[#C5A46D] mt-0.5">
-              EVENTS • DECOR • CELEBRATIONS
-            </span>
+          {/* Brand Logo & Tagline with Lotus Emblem */}
+          <Link to="/" className="flex items-center gap-2.5 group shrink-0">
+            <div className="text-[#6B1D2F] group-hover:scale-105 transition-transform">
+              <LotusNavbarIcon className="w-7 h-7 sm:w-8 sm:h-8" />
+            </div>
+            <div className="flex flex-col">
+              <span className="font-heading text-lg sm:text-2xl font-bold text-[#6B1D2F] tracking-tight leading-none">
+                Sasamal Events
+              </span>
+              <span className="text-[7.5px] sm:text-[9.5px] font-semibold tracking-[0.18em] sm:tracking-[0.2em] uppercase text-[#6B1D2F]/80 mt-0.5">
+                EVENTS • DECOR • CELEBRATIONS
+              </span>
+            </div>
           </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center gap-1.5 xl:gap-2">
+          {/* Desktop Navigation Links */}
+          <div className="hidden lg:flex items-center gap-1 sm:gap-2">
+            {/* Home with active underline */}
             <Link
               to="/"
-              className={`px-3.5 py-2 text-sm font-medium rounded-lg transition-colors ${
+              className={`px-3 py-1.5 text-sm font-medium transition-colors relative ${
                 location.pathname === '/'
-                  ? 'text-[#6B1D2F] font-semibold'
-                  : 'text-[#292725]/80 hover:text-[#6B1D2F] hover:bg-black/5'
+                  ? 'text-[#6B1D2F] font-bold after:content-[""] after:absolute after:bottom-0 after:left-3 after:right-3 after:h-0.5 after:bg-[#6B1D2F]'
+                  : 'text-[#292725]/85 hover:text-[#6B1D2F]'
               }`}
             >
               Home
@@ -93,10 +109,10 @@ export function Navbar() {
               <button
                 type="button"
                 onClick={() => setIsServicesOpen(!isServicesOpen)}
-                className={`inline-flex items-center gap-1 px-3.5 py-2 text-sm font-medium rounded-lg transition-colors ${
+                className={`inline-flex items-center gap-1 px-3 py-1.5 text-sm font-medium transition-colors ${
                   location.pathname.startsWith('/services')
-                    ? 'text-[#6B1D2F] font-semibold'
-                    : 'text-[#292725]/80 hover:text-[#6B1D2F] hover:bg-black/5'
+                    ? 'text-[#6B1D2F] font-bold'
+                    : 'text-[#292725]/85 hover:text-[#6B1D2F]'
                 }`}
               >
                 <span>Services</span>
@@ -139,10 +155,8 @@ export function Navbar() {
 
             <Link
               to="/gallery"
-              className={`px-3.5 py-2 text-sm font-medium rounded-lg transition-colors ${
-                location.pathname === '/gallery'
-                  ? 'text-[#6B1D2F] font-semibold'
-                  : 'text-[#292725]/80 hover:text-[#6B1D2F] hover:bg-black/5'
+              className={`px-3 py-1.5 text-sm font-medium transition-colors ${
+                location.pathname === '/gallery' ? 'text-[#6B1D2F] font-bold' : 'text-[#292725]/85 hover:text-[#6B1D2F]'
               }`}
             >
               Gallery
@@ -150,10 +164,8 @@ export function Navbar() {
 
             <Link
               to="/about"
-              className={`px-3.5 py-2 text-sm font-medium rounded-lg transition-colors ${
-                location.pathname === '/about'
-                  ? 'text-[#6B1D2F] font-semibold'
-                  : 'text-[#292725]/80 hover:text-[#6B1D2F] hover:bg-black/5'
+              className={`px-3 py-1.5 text-sm font-medium transition-colors ${
+                location.pathname === '/about' ? 'text-[#6B1D2F] font-bold' : 'text-[#292725]/85 hover:text-[#6B1D2F]'
               }`}
             >
               About Us
@@ -161,59 +173,52 @@ export function Navbar() {
 
             <Link
               to="/contact"
-              className={`px-3.5 py-2 text-sm font-medium rounded-lg transition-colors ${
-                location.pathname === '/contact'
-                  ? 'text-[#6B1D2F] font-semibold'
-                  : 'text-[#292725]/80 hover:text-[#6B1D2F] hover:bg-black/5'
+              className={`px-3 py-1.5 text-sm font-medium transition-colors ${
+                location.pathname === '/contact' ? 'text-[#6B1D2F] font-bold' : 'text-[#292725]/85 hover:text-[#6B1D2F]'
               }`}
             >
               Contact
             </Link>
           </div>
 
-          {/* Desktop Action Items */}
+          {/* Header Action Items (Circular WhatsApp Button + Solid Maroon "Enquire Now" Pill) */}
           <div className="hidden lg:flex items-center gap-3">
-            {/* WhatsApp Icon Button */}
             <button
+              type="button"
               onClick={handleWhatsApp}
-              className="p-2.5 rounded-full bg-[#25D366]/10 text-[#25D366] hover:bg-[#25D366] hover:text-white transition-all shadow-sm"
-              title="Chat with us on WhatsApp"
-              aria-label="WhatsApp Us"
-            >
-              <MessageCircle className="w-5 h-5" />
-            </button>
-
-            {/* Enquire Now Button */}
-            <Button
-              variant="maroon"
-              size="sm"
-              onClick={() => setQuoteModalOpen(true)}
-              className="rounded-full px-5 py-2 text-xs font-semibold tracking-wide uppercase shadow-sm"
-            >
-              Enquire Now
-            </Button>
-          </div>
-
-          {/* Mobile Actions & Menu Toggle */}
-          <div className="flex items-center gap-2 lg:hidden">
-            <button
-              onClick={handleWhatsApp}
-              className="p-2 rounded-full bg-[#25D366]/10 text-[#25D366] hover:bg-[#25D366] hover:text-white transition-colors"
-              aria-label="WhatsApp"
+              className="w-9 h-9 rounded-full border border-[#6B1D2F] text-[#6B1D2F] hover:bg-[#6B1D2F] hover:text-white flex items-center justify-center transition-all"
+              aria-label="WhatsApp Enquiry"
             >
               <MessageCircle className="w-4 h-4" />
             </button>
 
             <button
-              className="p-2 rounded-lg hover:bg-black/5 transition-colors"
-              onClick={() => setMobileMenuOpen(!isMobileMenuOpen)}
-              aria-label="Toggle menu"
+              type="button"
+              onClick={() => setQuoteModalOpen(true)}
+              className="bg-[#6B1D2F] hover:bg-[#521321] text-white rounded-full px-5 py-2 text-sm font-semibold transition-all shadow-sm hover:shadow"
             >
-              {isMobileMenuOpen ? (
-                <X className="w-6 h-6 text-[#292725]" />
-              ) : (
-                <Menu className="w-6 h-6 text-[#292725]" />
-              )}
+              Enquire Now
+            </button>
+          </div>
+
+          {/* Mobile Menu & WhatsApp Buttons */}
+          <div className="flex items-center gap-2 lg:hidden">
+            <button
+              type="button"
+              onClick={handleWhatsApp}
+              className="w-9 h-9 rounded-full border border-[#6B1D2F] text-[#6B1D2F] flex items-center justify-center"
+              aria-label="WhatsApp Enquiry"
+            >
+              <MessageCircle className="w-4 h-4" />
+            </button>
+
+            <button
+              type="button"
+              onClick={() => setMobileMenuOpen(!isMobileMenuOpen)}
+              className="p-2 text-[#292725] hover:text-[#6B1D2F] focus:outline-none"
+              aria-label="Toggle Menu"
+            >
+              {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
           </div>
         </nav>
@@ -221,84 +226,61 @@ export function Navbar() {
 
       {/* Mobile Drawer */}
       {isMobileMenuOpen && (
-        <div className="lg:hidden fixed inset-0 top-16 bg-[#FAF8F3] z-40 animate-slide-down border-t border-[#C5A46D]/20 overflow-y-auto">
-          <div className="flex flex-col p-6 space-y-1">
-            <Link
-              to="/"
-              className={`px-4 py-3 text-base font-medium rounded-xl transition-colors ${
-                location.pathname === '/' ? 'text-[#6B1D2F] bg-[#6B1D2F]/10 font-bold' : 'text-[#292725]'
-              }`}
-            >
-              Home
-            </Link>
-
-            {/* Mobile Services Accordion */}
-            <div className="py-2">
-              <span className="px-4 text-xs font-bold uppercase tracking-wider text-[#C5A46D] block mb-2">
-                Services
-              </span>
-              <div className="space-y-1 pl-2">
-                {serviceDropdownItems.map((item) => (
-                  <Link
-                    key={item.name}
-                    to={item.path}
-                    className="block px-4 py-2 text-sm text-[#292725] hover:text-[#6B1D2F] rounded-lg transition-colors"
-                  >
-                    {item.name}
-                  </Link>
-                ))}
-                <Link
-                  to="/services"
-                  className="block px-4 py-2 text-sm font-semibold text-[#6B1D2F]"
-                >
-                  View All Services &rarr;
-                </Link>
-              </div>
-            </div>
-
-            <Link
-              to="/gallery"
-              className={`px-4 py-3 text-base font-medium rounded-xl transition-colors ${
-                location.pathname === '/gallery' ? 'text-[#6B1D2F] bg-[#6B1D2F]/10 font-bold' : 'text-[#292725]'
-              }`}
-            >
-              Gallery
-            </Link>
-
-            <Link
-              to="/about"
-              className={`px-4 py-3 text-base font-medium rounded-xl transition-colors ${
-                location.pathname === '/about' ? 'text-[#6B1D2F] bg-[#6B1D2F]/10 font-bold' : 'text-[#292725]'
-              }`}
-            >
-              About Us
-            </Link>
-
-            <Link
-              to="/contact"
-              className={`px-4 py-3 text-base font-medium rounded-xl transition-colors ${
-                location.pathname === '/contact' ? 'text-[#6B1D2F] bg-[#6B1D2F]/10 font-bold' : 'text-[#292725]'
-              }`}
-            >
-              Contact
-            </Link>
-
-            <div className="pt-4 space-y-3 border-t border-[#C5A46D]/20 mt-4">
-              <Button
-                variant="maroon"
-                fullWidth
-                onClick={() => {
-                  setMobileMenuOpen(false);
-                  setQuoteModalOpen(true);
-                }}
+        <div className="lg:hidden bg-[#FAF7F2] border-b border-[#C5A46D]/20 px-6 py-6 space-y-4 animate-fade-in shadow-lg">
+          <Link
+            to="/"
+            className="block text-base font-semibold text-[#6B1D2F]"
+            onClick={() => setMobileMenuOpen(false)}
+          >
+            Home
+          </Link>
+          <div className="space-y-2 pl-2 border-l-2 border-[#C5A46D]/30">
+            <span className="text-xs font-bold uppercase tracking-wider text-[#C5A46D] block">
+              Our Services
+            </span>
+            {serviceDropdownItems.map((item) => (
+              <Link
+                key={item.name}
+                to={item.path}
+                className="block text-sm text-[#292725] hover:text-[#6B1D2F]"
+                onClick={() => setMobileMenuOpen(false)}
               >
-                Enquire Now
-              </Button>
-              <Button variant="whatsapp" fullWidth onClick={handleWhatsApp}>
-                <MessageCircle className="w-4 h-4" />
-                WhatsApp Us
-              </Button>
-            </div>
+                {item.name}
+              </Link>
+            ))}
+          </div>
+          <Link
+            to="/gallery"
+            className="block text-base font-medium text-[#292725] hover:text-[#6B1D2F]"
+            onClick={() => setMobileMenuOpen(false)}
+          >
+            Gallery
+          </Link>
+          <Link
+            to="/about"
+            className="block text-base font-medium text-[#292725] hover:text-[#6B1D2F]"
+            onClick={() => setMobileMenuOpen(false)}
+          >
+            About Us
+          </Link>
+          <Link
+            to="/contact"
+            className="block text-base font-medium text-[#292725] hover:text-[#6B1D2F]"
+            onClick={() => setMobileMenuOpen(false)}
+          >
+            Contact
+          </Link>
+          <div className="pt-2">
+            <button
+              type="button"
+              onClick={() => {
+                setMobileMenuOpen(false);
+                setQuoteModalOpen(true);
+              }}
+              className="w-full bg-[#6B1D2F] text-white py-2.5 rounded-full font-semibold text-center text-sm shadow"
+            >
+              Enquire Now
+            </button>
           </div>
         </div>
       )}
