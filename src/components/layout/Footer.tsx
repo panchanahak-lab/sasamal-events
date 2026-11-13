@@ -1,11 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Phone, MessageCircle } from 'lucide-react';
 import { InstagramIcon, FacebookIcon, YouTubeIcon } from '@/components/ui/Icons';
 import { Container } from '@/components/ui/Container';
 import { useStore } from '@/stores/useStore';
-import { getWhatsAppUrl } from '@/utils/format';
-import { generateSimpleWhatsAppMessage } from '@/utils/whatsapp';
 
 function LotusIcon({ className = 'w-7 h-7' }: { className?: string }) {
   return (
@@ -21,16 +18,11 @@ function LotusIcon({ className = 'w-7 h-7' }: { className?: string }) {
 export function Footer() {
   const { settings } = useStore();
 
-  const handleWhatsApp = () => {
-    const url = getWhatsAppUrl(settings.whatsapp, generateSimpleWhatsAppMessage());
-    window.open(url, '_blank', 'noopener,noreferrer');
-  };
-
   return (
-    <footer className="bg-[#6B1D2F] text-white overflow-hidden pt-12 pb-8 border-t border-[#C5A46D]/30">
+    <footer className="bg-[#6B1D2F] text-white overflow-hidden pt-12 pb-24 sm:pb-28 border-t border-[#C5A46D]/30">
       <Container>
         {/* Top Header Row (Logo Left, Nav Links Center, Social Icons Right) */}
-        <div className="flex flex-col md:flex-row items-center justify-between gap-6 pb-10 border-b border-white/15">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-6 pb-8 border-b border-white/15">
           {/* Left: Brand Logo & Tagline */}
           <Link to="/" className="flex items-center gap-3 group">
             <div className="text-[#F6BD38] group-hover:scale-105 transition-transform">
@@ -40,7 +32,7 @@ export function Footer() {
               <span className="font-heading text-xl sm:text-2xl font-bold text-white tracking-tight leading-tight">
                 Sasamal Events
               </span>
-              <span className="text-[8.5px] sm:text-[9.5px] font-semibold tracking-[0.2em] uppercase text-rose-100/80">
+              <span className="text-[8px] sm:text-[9.5px] font-semibold tracking-[0.2em] uppercase text-rose-100/80">
                 EVENTS • DECOR • CELEBRATIONS
               </span>
             </div>
@@ -101,26 +93,9 @@ export function Footer() {
           </div>
         </div>
 
-        {/* Bottom Action Bar (Two Prominent Pill Buttons: "Call Us" and "WhatsApp Enquiry") */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 pt-8 max-w-4xl mx-auto">
-          {/* Call Us Button (White/Cream Pill with Maroon Text) */}
-          <a
-            href={`tel:${settings.phone || '+919324673895'}`}
-            className="flex items-center justify-center gap-2.5 bg-[#FAF7F2] hover:bg-white text-[#6B1D2F] font-bold text-sm sm:text-base py-3.5 px-6 rounded-full shadow-md hover:shadow-lg transition-all"
-          >
-            <Phone className="w-4 h-4 text-[#6B1D2F]" />
-            <span>Call Us</span>
-          </a>
-
-          {/* WhatsApp Enquiry Button (Vibrant Green Pill with White Text) */}
-          <button
-            type="button"
-            onClick={handleWhatsApp}
-            className="flex items-center justify-center gap-2.5 bg-[#25D366] hover:bg-[#20ba59] text-white font-bold text-sm sm:text-base py-3.5 px-6 rounded-full shadow-md hover:shadow-lg transition-all"
-          >
-            <MessageCircle className="w-4 h-4 fill-white text-transparent" />
-            <span>WhatsApp Enquiry</span>
-          </button>
+        {/* Bottom Copyright */}
+        <div className="pt-6 text-center text-xs text-rose-100/70">
+          <p>© {new Date().getFullYear()} Sasamal Events. All rights reserved. Crafted for timeless celebrations.</p>
         </div>
       </Container>
     </footer>

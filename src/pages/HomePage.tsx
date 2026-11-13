@@ -4,10 +4,11 @@ import { ServicesSection } from '@/components/home/ServicesSection';
 import { CelebrationStyleSection } from '@/components/home/CelebrationStyleSection';
 import { CulturalBannerSection } from '@/components/home/CulturalBannerSection';
 import { FeaturesSection } from '@/components/home/FeaturesSection';
+import { ConsultationSection } from '@/components/home/ConsultationSection';
 
 export function HomePage() {
   return (
-    <div className="flex flex-col w-full bg-[#FAF8F3] overflow-x-hidden">
+    <div className="flex flex-col w-full bg-[#FEF8F5] overflow-x-hidden">
       {/* 1. Hero Section */}
       <HeroSection />
 
@@ -20,8 +21,11 @@ export function HomePage() {
       {/* 4. Indian Cultural Design Banner */}
       <CulturalBannerSection />
 
-      {/* 5. Features Section (3 blocks: Customised Themes, Quality Execution, Navi Mumbai & Beyond) */}
+      {/* 5. Features Section (3 trust badges) */}
       <FeaturesSection />
+
+      {/* 6. Quick Quote Personalized Consultation Form */}
+      <ConsultationSection />
     </div>
   );
 }

@@ -1,22 +1,38 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 @import "tailwindcss";
 
 @theme {
   --color-ivory: #FAF8F3;
   --color-cream: #FAF7F2;
+  --color-surface: #FEF8F5;
+  --color-surface-ivory: #FAF8F3;
+  --color-surface-cream: #FFFDF9;
+  --color-surface-container: #F3EDE9;
+  --color-surface-container-low: #F8F2EF;
+  --color-surface-container-lowest: #FFFFFF;
   --color-maroon: #6B1D2F;
-  --color-maroon-dark: #521321;
+  --color-maroon-dark: #4E1220;
+  --color-maroon-deep: #4E051A;
   --color-maroon-light: #85263B;
+  --color-primary-container: #6B1D2F;
+  --color-primary: #4E051A;
+  --color-crimson-dark: #4E1220;
   --color-gold: #C5A46D;
-  --color-gold-light: #D4B887;
+  --color-gold-light: #FDE8B3;
   --color-gold-dark: #B08F56;
-  --color-gold-accent: #E5A93C;
+  --color-secondary-container: #FDC33E;
+  --color-amber-gold: #F6BD38;
+  --color-whatsapp-green: #00A859;
   --color-terracotta: #B77C68;
   --color-terracotta-light: #C99A89;
-  --color-charcoal: #292725;
+  --color-charcoal: #1D1B19;
+  --color-on-surface: #1D1B19;
+  --color-on-surface-variant: #544244;
   --color-warm-gray: #77716B;
   --color-warm-gray-light: #A39E97;
-  --font-serif: 'Cormorant Garamond', Georgia, serif;
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-heading: 'Playfair Display', Georgia, serif;
+  --font-display: 'Playfair Display', Georgia, serif;
   --font-sans: 'DM Sans', system-ui, sans-serif;
 }
 

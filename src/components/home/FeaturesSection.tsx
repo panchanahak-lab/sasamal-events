@@ -1,7 +1,7 @@
 import React from 'react';
 import { Container } from '@/components/ui/Container';
 
-// Custom Gold Outlined Icons matching reference screenshot
+// Custom Outlined Icons matching Stitch design
 function DiamondIcon({ className = 'w-6 h-6' }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
@@ -51,38 +51,30 @@ const features = [
 
 export function FeaturesSection() {
   return (
-    <section className="py-8 sm:py-12 bg-[#FAF7F2] overflow-hidden">
+    <section className="py-8 sm:py-12 bg-[#FEF8F5] overflow-hidden">
       <Container>
-        {/* Horizontal Card / Strip with 3 Segmented Features & Vertical Dividers */}
-        <div className="bg-white rounded-2xl sm:rounded-3xl border border-[#C5A46D]/25 shadow-sm p-6 sm:p-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-0 items-center">
-            {features.map((feature, idx) => {
-              const Icon = feature.icon;
-              return (
-                <div
-                  key={idx}
-                  className={`flex items-center gap-4 px-4 sm:px-6 py-2 ${
-                    idx < features.length - 1 ? 'md:border-r md:border-[#C5A46D]/25' : ''
-                  }`}
-                >
-                  {/* Gold Badge Icon Container */}
-                  <div className="w-12 h-12 rounded-full border border-[#C5A46D]/50 bg-[#FAF7F0] flex items-center justify-center text-[#B68B42] shrink-0 shadow-sm">
-                    <Icon className="w-6 h-6 stroke-[1.8]" />
-                  </div>
-
-                  {/* Feature Title & Subtitle */}
-                  <div>
-                    <h3 className="font-heading text-base sm:text-lg font-bold text-[#2A2421] leading-tight mb-0.5">
-                      {feature.title}
-                    </h3>
-                    <p className="text-xs sm:text-sm text-[#77716B] font-normal">
-                      {feature.subtitle}
-                    </p>
-                  </div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 bg-white rounded-2xl p-6 sm:p-8 shadow-sm border border-[#dac0c2]/30">
+          {features.map((feature, idx) => {
+            const Icon = feature.icon;
+            return (
+              <div
+                key={idx}
+                className="flex items-center gap-4 p-2 sm:p-3 rounded-xl hover:bg-[#F8F2EF] transition-colors"
+              >
+                <div className="w-12 h-12 rounded-full bg-[#FDC33E]/20 flex items-center justify-center text-[#7A5900] shrink-0">
+                  <Icon className="w-6 h-6 stroke-[1.8]" />
                 </div>
-              );
-            })}
-          </div>
+                <div className="flex flex-col">
+                  <h4 className="text-base sm:text-lg font-bold text-[#1D1B19] leading-tight">
+                    {feature.title}
+                  </h4>
+                  <span className="text-xs sm:text-sm text-[#544244]">
+                    {feature.subtitle}
+                  </span>
+                </div>
+              </div>
+            );
+          })}
         </div>
       </Container>
     </section>
