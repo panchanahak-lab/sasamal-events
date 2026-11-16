@@ -54,6 +54,9 @@ export function Footer() {
             <Link to="/services" className="hover:text-[#F6BD38] transition-colors">
               Services
             </Link>
+            <Link to="/packages" className="hover:text-[#F6BD38] transition-colors">
+              Pricing &amp; Customizer
+            </Link>
             <Link to="/gallery" className="hover:text-[#F6BD38] transition-colors">
               Gallery
             </Link>

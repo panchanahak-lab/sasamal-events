@@ -127,6 +127,20 @@ export function Navbar() {
                       Celebrations We Create
                     </span>
                   </div>
+
+                  {/* Highlighted Real-Time Customizer Link */}
+                  <Link
+                    to="/packages"
+                    className="block px-3 py-2 rounded-xl bg-[#6B1D2F]/5 border border-[#6B1D2F]/20 hover:bg-[#6B1D2F]/10 transition-colors group mb-1.5"
+                    onClick={() => setIsServicesOpen(false)}
+                  >
+                    <div className="text-sm font-bold text-[#6B1D2F] flex items-center justify-between">
+                      <span>✨ Real-Time Customizer</span>
+                      <span className="text-[10px] px-1.5 py-0.5 rounded bg-[#6B1D2F] text-white uppercase font-bold">Instant Price</span>
+                    </div>
+                    <div className="text-[11px] text-[#77716B]">Configure items &amp; calculate exact price live</div>
+                  </Link>
+
                   {serviceDropdownItems.map((item) => (
                     <Link
                       key={item.name}
@@ -152,6 +166,16 @@ export function Navbar() {
                 </div>
               )}
             </div>
+
+            {/* Direct Customizer & Pricing Nav Link */}
+            <Link
+              to="/packages"
+              className={`px-3 py-1.5 text-sm font-medium transition-colors ${
+                location.pathname === '/packages' ? 'text-[#6B1D2F] font-bold' : 'text-[#292725]/85 hover:text-[#6B1D2F]'
+              }`}
+            >
+              Customizer &amp; Pricing
+            </Link>
 
             <Link
               to="/gallery"
@@ -249,6 +273,14 @@ export function Navbar() {
               </Link>
             ))}
           </div>
+          <Link
+            to="/packages"
+            className="block text-base font-semibold text-[#6B1D2F] flex items-center justify-between"
+            onClick={() => setMobileMenuOpen(false)}
+          >
+            <span>✨ Customizer &amp; Pricing</span>
+            <span className="text-[10px] px-2 py-0.5 rounded-full bg-[#6B1D2F] text-white uppercase font-bold">Live Calculator</span>
+          </Link>
           <Link
             to="/gallery"
             className="block text-base font-medium text-[#292725] hover:text-[#6B1D2F]"

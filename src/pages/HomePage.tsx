@@ -4,6 +4,7 @@ import { ServicesSection } from '@/components/home/ServicesSection';
 import { CelebrationStyleSection } from '@/components/home/CelebrationStyleSection';
 import { CulturalBannerSection } from '@/components/home/CulturalBannerSection';
 import { FeaturesSection } from '@/components/home/FeaturesSection';
+import { CustomiseSection } from '@/components/home/CustomiseSection';
 
 export function HomePage() {
   return (
@@ -22,6 +23,9 @@ export function HomePage() {
 
       {/* 5. Features Section (3 blocks: Customised Themes, Quality Execution, Navi Mumbai & Beyond) */}
       <FeaturesSection />
+
+      {/* 6. Interactive Real-Time Customizer & Price Calculator Tool (Multi-Ceremony) */}
+      <CustomiseSection />
     </div>
   );
 }
