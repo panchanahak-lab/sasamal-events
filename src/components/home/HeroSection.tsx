@@ -13,39 +13,39 @@ export interface HeroSlide {
 
 export const HERO_SLIDES: HeroSlide[] = [
   {
-    id: 'garden-mandap',
-    name: 'Garden Type Mandap',
-    themeTag: 'Lush Garden Floral Style',
+    id: 'wedding-ceremonies',
+    name: 'Wedding Ceremonies',
+    themeTag: 'Royal Mandap & Floral Decor',
     image: '/images/hero-mandap.jpg',
-    alt: 'Royal Garden Wedding Mandap Decoration by Sasamal Events',
+    alt: 'Royal Wedding Mandap Decoration by Sasamal Events',
   },
   {
-    id: 'village-theme',
-    name: 'Village Theme Heritage',
-    themeTag: 'Traditional Rustic Marigold Decor',
+    id: 'ring-ceremony',
+    name: 'Ring Ceremony',
+    themeTag: 'Grand Stage & Shimmering Ring Decor',
+    image: '/images/hero-ring-ceremony.jpg',
+    alt: 'Luxury Indian Ring Ceremony & Engagement Stage Decoration by Sasamal Events',
+  },
+  {
+    id: 'birthday-celebrations',
+    name: 'Birthday Celebrations',
+    themeTag: 'Luxury Balloon Styling & Grand Themes',
+    image: '/images/hero-birthday-celebration.jpg',
+    alt: 'Grand Luxury Birthday Celebration Decoration by Sasamal Events',
+  },
+  {
+    id: 'private-functions',
+    name: 'Private Functions',
+    themeTag: 'Intimate Sunset Dinners & Gatherings',
+    image: '/images/hero-private-functions.jpg',
+    alt: 'Intimate Luxury Private Function & Dinner Decor by Sasamal Events',
+  },
+  {
+    id: 'haldi-ceremony',
+    name: 'Haldi & Pre-Wedding',
+    themeTag: 'Vibrant Traditional Marigold Decor',
     image: '/images/hero-village-theme.jpg',
-    alt: 'Authentic Indian Village Theme Wedding Mandap with Marigolds and Brass Urlis',
-  },
-  {
-    id: 'minimal-luxury',
-    name: 'Minimal Luxury',
-    themeTag: 'Ivory & Champagne Gold Elegance',
-    image: '/images/theme-minimal-luxury.jpg',
-    alt: 'Minimal Luxury Wedding Stage Decor with Floral Arch and Royal Seating',
-  },
-  {
-    id: 'destination-wedding',
-    name: 'Destination Wedding',
-    themeTag: 'Scenic Lakeside Palace Grandeur',
-    image: '/images/hero-destination-wedding.jpg',
-    alt: 'Luxury Destination Wedding Mandap on Lakeside Palace Terrace at Sunset',
-  },
-  {
-    id: 'enchanted-garden',
-    name: 'Enchanted Garden',
-    themeTag: 'Fairy Lights & Hanging Wisteria',
-    image: '/images/theme-enchanted-garden.jpg',
-    alt: 'Enchanted Garden Twilight Wedding Setting with Floral Canopy and Fairy Lights',
+    alt: 'Authentic Indian Cultural & Haldi Ceremony Decor by Sasamal Events',
   },
 ];
 
@@ -78,16 +78,30 @@ export function HeroSection() {
     };
   }, [isPaused]);
 
+  const resetTimer = () => {
+    if (autoSlideTimerRef.current) {
+      clearInterval(autoSlideTimerRef.current);
+    }
+    if (!isPaused) {
+      autoSlideTimerRef.current = window.setInterval(() => {
+        setCurrentSlideIndex((prev) => (prev + 1) % HERO_SLIDES.length);
+      }, 5000);
+    }
+  };
+
   const handlePrevSlide = () => {
     setCurrentSlideIndex((prev) => (prev - 1 + HERO_SLIDES.length) % HERO_SLIDES.length);
+    resetTimer();
   };
 
   const handleNextSlide = () => {
     setCurrentSlideIndex((prev) => (prev + 1) % HERO_SLIDES.length);
+    resetTimer();
   };
 
   const handleSelectSlide = (index: number) => {
     setCurrentSlideIndex(index);
+    resetTimer();
   };
 
   const handleScrollToServices = (e: React.MouseEvent) => {
@@ -194,10 +208,10 @@ export function HeroSection() {
 
         {/* Carousel / Slider Pagination Dots with Active Theme Indicator */}
         <div className="flex flex-col items-center justify-center gap-2.5 pt-12 sm:pt-16 z-20 relative">
-          {/* Active Wedding Theme Badge */}
+          {/* Active Celebration Category Badge */}
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-black/45 backdrop-blur-md border border-white/20 text-[11px] sm:text-xs text-rose-100 font-medium transition-all shadow-sm">
             <span className="w-2 h-2 rounded-full bg-[#F6BD38] animate-pulse" />
-            <span>Theme: <strong className="text-white font-bold">{HERO_SLIDES[currentSlideIndex].name}</strong></span>
+            <span>Celebration: <strong className="text-white font-bold">{HERO_SLIDES[currentSlideIndex].name}</strong></span>
           </div>
 
           {/* Interactive Pagination Dots */}
