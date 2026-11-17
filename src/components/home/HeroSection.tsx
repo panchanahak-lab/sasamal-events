@@ -55,7 +55,9 @@ export function HeroSection() {
   const [isPaused, setIsPaused] = useState(false);
   const autoSlideTimerRef = useRef<number | null>(null);
 
-  // Auto-slide every 5 seconds
+  const SLIDE_INTERVAL_MS = 2000;
+
+  // Auto-slide every 2 seconds
   useEffect(() => {
     // Preload all slide images into browser cache
     HERO_SLIDES.forEach((slide) => {
@@ -69,7 +71,7 @@ export function HeroSection() {
 
     autoSlideTimerRef.current = window.setInterval(() => {
       setCurrentSlideIndex((prev) => (prev + 1) % HERO_SLIDES.length);
-    }, 5000);
+    }, SLIDE_INTERVAL_MS);
 
     return () => {
       if (autoSlideTimerRef.current) {
@@ -85,7 +87,7 @@ export function HeroSection() {
     if (!isPaused) {
       autoSlideTimerRef.current = window.setInterval(() => {
         setCurrentSlideIndex((prev) => (prev + 1) % HERO_SLIDES.length);
-      }, 5000);
+      }, SLIDE_INTERVAL_MS);
     }
   };
 
@@ -127,7 +129,7 @@ export function HeroSection() {
           return (
             <div
               key={slide.id}
-              className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
+              className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${
                 isActive ? 'opacity-100 z-0' : 'opacity-0 pointer-events-none'
               }`}
             >
