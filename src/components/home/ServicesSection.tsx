@@ -1,12 +1,12 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Container } from '@/components/ui/Container';
 
 export interface ServiceCardData {
   id: string;
   title: string;
-  image: string;
+  images: string[];
   link: string;
   icon: (props: { className?: string }) => React.JSX.Element;
 }
@@ -98,46 +98,193 @@ function PrivateCelebrationIcon({ className = 'w-6 h-6' }: { className?: string 
   );
 }
 
+interface CardImageSliderProps {
+  images: string[];
+  alt: string;
+  intervalMs?: number;
+}
+
+function CardImageSlider({ images, alt, intervalMs = 2800 }: CardImageSliderProps) {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isHovered, setIsHovered] = useState(false);
+
+  useEffect(() => {
+    // Preload images for instant crossfading
+    images.forEach((src) => {
+      const img = new Image();
+      img.src = src;
+    });
+  }, [images]);
+
+  useEffect(() => {
+    if (isHovered || images.length <= 1) return;
+
+    const timer = window.setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % images.length);
+    }, intervalMs);
+
+    return () => clearInterval(timer);
+  }, [isHovered, images.length, intervalMs]);
+
+  const handlePrev = (e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setCurrentIndex((prev) => (prev - 1 + images.length) % images.length);
+  };
+
+  const handleNext = (e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setCurrentIndex((prev) => (prev + 1) % images.length);
+  };
+
+  const handleSelect = (e: React.MouseEvent, index: number) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setCurrentIndex(index);
+  };
+
+  return (
+    <div
+      className="relative aspect-[16/10] w-full rounded-2xl overflow-hidden bg-warm-gray/10 shadow-inner select-none"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
+      {/* Sliding Images with Smooth Crossfade */}
+      {images.map((src, index) => {
+        const isActive = index === currentIndex;
+        return (
+          <div
+            key={src}
+            className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${
+              isActive ? 'opacity-100 z-0' : 'opacity-0 pointer-events-none'
+            }`}
+          >
+            <img
+              src={src}
+              alt={`${alt} ${index + 1}`}
+              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+              loading="lazy"
+            />
+          </div>
+        );
+      })}
+
+      <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors pointer-events-none z-[1]" />
+
+      {/* Navigation Chevrons on Hover (Desktop) */}
+      {images.length > 1 && (
+        <>
+          <button
+            type="button"
+            onClick={handlePrev}
+            className="absolute left-2 top-1/2 -translate-y-1/2 z-10 w-7 h-7 rounded-full bg-black/45 hover:bg-[#6B1D2F] text-white/90 hover:text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all backdrop-blur-sm shadow-md hover:scale-110"
+            aria-label="Previous image"
+          >
+            <ChevronLeft className="w-4 h-4" />
+          </button>
+          <button
+            type="button"
+            onClick={handleNext}
+            className="absolute right-2 top-1/2 -translate-y-1/2 z-10 w-7 h-7 rounded-full bg-black/45 hover:bg-[#6B1D2F] text-white/90 hover:text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all backdrop-blur-sm shadow-md hover:scale-110"
+            aria-label="Next image"
+          >
+            <ChevronRight className="w-4 h-4" />
+          </button>
+        </>
+      )}
+
+      {/* Discrete Pagination Dots at Bottom Center */}
+      {images.length > 1 && (
+        <div className="absolute bottom-2.5 inset-x-0 z-10 flex items-center justify-center gap-1.5 pointer-events-auto">
+          <div className="flex items-center gap-1.5 px-2 py-1 rounded-full bg-black/45 backdrop-blur-sm shadow-sm">
+            {images.map((_, dotIndex) => {
+              const isActive = dotIndex === currentIndex;
+              return (
+                <button
+                  key={dotIndex}
+                  type="button"
+                  onClick={(e) => handleSelect(e, dotIndex)}
+                  className={`transition-all duration-300 rounded-full cursor-pointer ${
+                    isActive
+                      ? 'w-4 h-1.5 bg-[#F6BD38] shadow-sm'
+                      : 'w-1.5 h-1.5 bg-white/70 hover:bg-white hover:scale-125'
+                  }`}
+                  aria-label={`Go to image ${dotIndex + 1}`}
+                />
+              );
+            })}
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}
+
 export const servicesData: ServiceCardData[] = [
   {
     id: 'ring-ceremony',
     title: 'Ring Ceremony',
-    image: '/images/ring-ceremony.jpg',
+    images: [
+      '/images/hero-ring-ceremony.jpg',
+      '/images/ring-ceremony-2.jpg',
+      '/images/ring-ceremony.jpg',
+    ],
     link: '/services#engagement-ring-ceremony',
     icon: RingIcon,
   },
   {
     id: 'haldi-ceremony',
     title: 'Haldi Ceremony',
-    image: '/images/haldi-ceremony.jpg',
+    images: [
+      '/images/haldi-ceremony-2.jpg',
+      '/images/haldi-ceremony.jpg',
+      '/images/cultural-banner-urli.jpg',
+    ],
     link: '/services#haldi-mehendi-decorations',
     icon: HaldiIcon,
   },
   {
     id: 'mandap-decoration',
     title: 'Mandap Decoration',
-    image: '/images/mandap-decoration.jpg',
+    images: [
+      '/images/hero-mandap.jpg',
+      '/images/hero-destination-wedding.jpg',
+      '/images/mandap-decoration.jpg',
+    ],
     link: '/services#wedding-mandap-decorations',
     icon: MandapIcon,
   },
   {
     id: 'birthday-celebration',
     title: 'Birthday Celebration',
-    image: '/images/birthday-celebration.jpg',
+    images: [
+      '/images/hero-birthday-celebration.jpg',
+      '/images/birthday-celebration-2.jpg',
+      '/images/birthday-celebration-3.jpg',
+    ],
     link: '/packages',
     icon: BirthdayIcon,
   },
   {
     id: 'family-functions',
     title: 'Family Functions',
-    image: '/images/family-functions.jpg',
+    images: [
+      '/images/family-functions-2.jpg',
+      '/images/family-functions.jpg',
+      '/images/hero-village-theme.jpg',
+    ],
     link: '/services#family-functions',
     icon: FamilyIcon,
   },
   {
     id: 'private-functions',
     title: 'Private Functions',
-    image: '/images/private-functions.jpg',
+    images: [
+      '/images/hero-private-functions.jpg',
+      '/images/private-functions-2.jpg',
+      '/images/private-functions.jpg',
+    ],
     link: '/services#special-events',
     icon: PrivateCelebrationIcon,
   },
@@ -163,8 +310,11 @@ export function ServicesSection() {
 
         {/* Six Service Cards Grid (2 rows of 3 columns, matching reference screenshot) */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-          {servicesData.map((service) => {
+          {servicesData.map((service, cardIndex) => {
             const IconComponent = service.icon;
+            // Stagger auto-slide timing between 2400ms and 3600ms so cards don't all flip in lockstep
+            const intervalMs = 2400 + (cardIndex * 350) % 1400;
+
             return (
               <Link
                 key={service.id}
@@ -188,16 +338,12 @@ export function ServicesSection() {
                   </div>
                 </div>
 
-                {/* Card Bottom Photograph: Wide aspect ratio with rounded corners */}
-                <div className="relative aspect-[16/10] w-full rounded-2xl overflow-hidden bg-warm-gray/10 shadow-inner">
-                  <img
-                    src={service.image}
-                    alt={service.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    loading="lazy"
-                  />
-                  <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors" />
-                </div>
+                {/* Card Bottom Photograph: Interactive Multi-Image Auto-Slider */}
+                <CardImageSlider
+                  images={service.images}
+                  alt={service.title}
+                  intervalMs={intervalMs}
+                />
               </Link>
             );
           })}
