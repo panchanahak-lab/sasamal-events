@@ -259,6 +259,8 @@ export const servicesData: ServiceCardData[] = [
     id: 'birthday-celebration',
     title: 'Birthday Celebration',
     images: [
+      '/images/birthday-fairytale-stage.jpg',
+      '/images/birthday-purple-ring-arch.jpg',
       '/images/hero-birthday-celebration.jpg',
       '/images/birthday-celebration-2.jpg',
       '/images/birthday-celebration-3.jpg',

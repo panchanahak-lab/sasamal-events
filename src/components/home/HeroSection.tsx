@@ -29,9 +29,9 @@ export const HERO_SLIDES: HeroSlide[] = [
   {
     id: 'birthday-celebrations',
     name: 'Birthday Celebrations',
-    themeTag: 'Luxury Balloon Styling & Grand Themes',
-    image: '/images/hero-birthday-celebration.jpg',
-    alt: 'Grand Luxury Birthday Celebration Decoration by Sasamal Events',
+    themeTag: 'Fairytale Stage & Luxury Balloon Styling',
+    image: '/images/birthday-fairytale-stage.jpg',
+    alt: 'Grand Fairytale Birthday Celebration Decoration by Sasamal Events',
   },
   {
     id: 'private-functions',

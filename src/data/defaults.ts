@@ -564,9 +564,8 @@ export const defaultServices: Service[] = [
 ];
 
 export const defaultGalleryImages: GalleryImage[] = [
-  // Placeholder gallery images — to be replaced with actual photographs
-  { id: 'gal-1', title: 'Birthday Balloon Setup', description: 'Colourful balloon arrangement for a birthday celebration', image_url: 'https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=600&h=400&fit=crop', category: 'birthday', is_published: true, sort_order: 1, created_at: '', updated_at: '' },
-  { id: 'gal-2', title: 'Kids Birthday Party', description: 'Themed decoration for a children\'s birthday party', image_url: 'https://images.unsplash.com/photo-1464349153459-f0199f4a3a18?w=600&h=400&fit=crop', category: 'birthday', is_published: true, sort_order: 2, created_at: '', updated_at: '' },
+  { id: 'gal-1', title: 'Fairytale 1st Birthday Stage', description: 'Lavender and pastel fairytale wonderland 1st birthday stage with character cutouts and arches', image_url: '/images/birthday-fairytale-stage.jpg', category: 'birthday', is_published: true, sort_order: 1, created_at: '', updated_at: '' },
+  { id: 'gal-2', title: 'Purple Balloon Ring & Neon Arch', description: 'Purple and gold balloon circular ring arch with warm fairy lights and neon backdrop', image_url: '/images/birthday-purple-ring-arch.jpg', category: 'birthday', is_published: true, sort_order: 2, created_at: '', updated_at: '' },
   { id: 'gal-3', title: 'Engagement Stage', description: 'Elegant engagement ceremony stage decoration', image_url: 'https://images.unsplash.com/photo-1519741497674-611481863552?w=600&h=400&fit=crop', category: 'engagement', is_published: true, sort_order: 3, created_at: '', updated_at: '' },
   { id: 'gal-4', title: 'Wedding Mandap', description: 'Traditional wedding mandap decoration with flowers', image_url: 'https://images.unsplash.com/photo-1583037189850-1921ae7c6c22?w=600&h=400&fit=crop', category: 'wedding', is_published: true, sort_order: 4, created_at: '', updated_at: '' },
   { id: 'gal-5', title: 'Reception Stage', description: 'Grand reception stage with floral arrangements', image_url: 'https://images.unsplash.com/photo-1478146059778-26028b07395a?w=600&h=400&fit=crop', category: 'reception', is_published: true, sort_order: 5, created_at: '', updated_at: '' },
