@@ -15,9 +15,9 @@ export const HERO_SLIDES: HeroSlide[] = [
   {
     id: 'wedding-ceremonies',
     name: 'Wedding Ceremonies',
-    themeTag: 'Royal Mandap & Floral Decor',
-    image: '/images/hero-mandap.jpg',
-    alt: 'Royal Wedding Mandap Decoration by Sasamal Events',
+    themeTag: 'Royal Stage & Floral Canopy Decor',
+    image: '/images/wedding-stage-luxury-gold.jpg',
+    alt: 'Royal Wedding Stage & Floral Canopy Decoration by Sasamal Events',
   },
   {
     id: 'ring-ceremony',

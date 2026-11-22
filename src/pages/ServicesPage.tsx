@@ -61,7 +61,7 @@ const weddingSuite = [
     tagline: 'Sophistication, Elegance & Modern Stage Craft',
     categoryType: 'Full Event Management',
     description: 'Make a magnificent first impression as newlyweds. We craft glamorous reception stages featuring cascading floral backdrops, geometric arches, chandelier accents, royal couple sofas, and professional stage mood lighting.',
-    image: 'https://images.unsplash.com/photo-1478146059778-26028b07395a?w=1000&q=80&fit=crop',
+    image: '/images/wedding-stage-luxury-gold.jpg',
     features: [
       'Grand scale floral walls and geometric structure framing',
       'Dynamic lighting effects, warm white floodlights & couple spotlighting',
@@ -81,7 +81,7 @@ const otherCategories = [
     categoryType: 'Direct Sasamal Service',
     groupName: 'For Birthdays',
     description: 'We directly plan and execute joyous birthday setups for toddlers, kids, teenagers, and milestone adult celebrations across Navi Mumbai. Enjoy fixed package pricing starting at ₹1,500, themed balloon rings, vibrant arches, and delightful personalized props.',
-    image: 'https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=1000&q=80&fit=crop',
+    image: '/images/birthday-fairytale-stage.jpg',
     features: [
       'Children theme characters & pastel balloon backdrops',
       'Number and name foil setups with LED illumination',

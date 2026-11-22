@@ -246,11 +246,16 @@ export const servicesData: ServiceCardData[] = [
   },
   {
     id: 'mandap-decoration',
-    title: 'Mandap Decoration',
+    title: 'Wedding Decoration',
     images: [
+      '/images/wedding-stage-luxury-gold.jpg',
+      '/images/wedding-grand-entrance-portal.jpg',
+      '/images/wedding-lawn-entrance-walkway.jpg',
+      '/images/wedding-stage-geometric-arch.jpg',
+      '/images/wedding-henna-night-stage.jpg',
+      '/images/wedding-floral-ring-stage.jpg',
       '/images/hero-mandap.jpg',
       '/images/hero-destination-wedding.jpg',
-      '/images/mandap-decoration.jpg',
     ],
     link: '/services#wedding-mandap-decorations',
     icon: MandapIcon,
