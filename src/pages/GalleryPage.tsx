@@ -6,6 +6,7 @@ import type { GalleryImage } from '@/types';
 
 const filterCategories = [
   { id: 'all', label: 'All Celebrations' },
+  { id: 'haldi', label: 'Haldi Ceremony' },
   { id: 'birthday', label: 'Birthday Parties' },
   { id: 'engagement', label: 'Engagement & Rings' },
   { id: 'wedding', label: 'Wedding Mandaps' },

@@ -43,9 +43,9 @@ export const HERO_SLIDES: HeroSlide[] = [
   {
     id: 'haldi-ceremony',
     name: 'Haldi & Pre-Wedding',
-    themeTag: 'Vibrant Traditional Marigold Decor',
-    image: '/images/hero-village-theme.jpg',
-    alt: 'Authentic Indian Cultural & Haldi Ceremony Decor by Sasamal Events',
+    themeTag: 'Traditional Golden Lotus & Banana Leaf Decor',
+    image: '/images/haldi-banana-leaf-golden-lotus.jpg',
+    alt: 'Traditional Golden Lotus & Banana Leaf Haldi Ceremony Decor by Sasamal Events',
   },
 ];
 

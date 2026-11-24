@@ -29,7 +29,7 @@ const weddingSuite = [
     tagline: 'Vibrant Traditions, Bright Marigolds & Sunny Celebrations',
     categoryType: 'Thematic Ceremony Decor',
     description: 'Bring boundless joy to your pre-wedding rituals with bright yellow and orange marigold canopies, traditional brass urlis for floral baths, colorful Rajasthani drapes, dreamcatcher backdrops, and decorated couple swings.',
-    image: '/images/haldi-ceremony.jpg',
+    image: '/images/haldi-banana-leaf-golden-lotus.jpg',
     features: [
       'Traditional brass / fiber urli for the Haldi ceremony',
       'Marigold flower strings, tassel canopies & gota patti hangings',

@@ -9,6 +9,7 @@ import type { GalleryImage } from '@/types';
 
 const categories = [
   { id: 'all', label: 'All Events' },
+  { id: 'haldi', label: 'Haldi' },
   { id: 'birthday', label: 'Birthday' },
   { id: 'engagement', label: 'Engagement' },
   { id: 'wedding', label: 'Wedding' },
