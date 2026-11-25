@@ -241,10 +241,13 @@ Please let me know how to proceed.`;
                     className="w-full px-4 py-2.5 rounded-xl border border-warm-gray-light/40 focus:border-[#C5A46D] outline-none text-sm bg-white"
                   >
                     <option value="For Wedding: Wedding Mandap & Sacred Rituals">For Wedding: Wedding Mandap & Sacred Rituals</option>
+                    <option value="Mandap Decoration">Mandap Decoration</option>
                     <option value="For Wedding: Haldi & Mehendi Celebration">For Wedding: Haldi & Mehendi Celebration</option>
                     <option value="For Wedding: Ring Ceremony & Engagement">For Wedding: Ring Ceremony & Engagement</option>
                     <option value="For Wedding: Reception Stage & Seating">For Wedding: Reception Stage & Seating</option>
                     <option value="For Wedding: Full Wedding Package">For Wedding: Complete Wedding Package</option>
+                    <option value="Success Party">Success Party / Milestone Celebration</option>
+                    <option value="Gender Reveal">Gender Reveal / Baby Shower</option>
                     <option value="Birthday Celebration">Birthday Celebration (Kids / Adults)</option>
                     <option value="Baby Shower / Naming Ceremony">Baby Shower / Naming Ceremony</option>
                     <option value="Anniversary & Family Function">Anniversary & Family Function</option>

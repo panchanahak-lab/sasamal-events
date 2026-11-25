@@ -125,6 +125,40 @@ const otherCategories = [
     pricingNote: 'Custom Quotation Based on Requirements',
     isDirect: false,
   },
+  {
+    id: 'success-party',
+    name: 'Success Party & Milestone Celebrations',
+    tagline: 'Milestone Victories, Corporate Achievements & Grand Soirées',
+    categoryType: 'Direct & Curated Solutions',
+    groupName: 'Success Parties',
+    description: 'Celebrate career milestones, business breakthroughs, product launches, or academic triumphs in Navi Mumbai. We craft upscale festive setups with golden shimmer backdrops, marquee letter installations, champagne towers, balloon styling, and professional stage illumination.',
+    image: '/images/success-party-1.jpg',
+    features: [
+      'Glow-in-the-dark neon signs and "SUCCESS" marquee letter setups',
+      'Premium black, metallic gold, and chrome balloon styling',
+      'Red carpet entrance walkways with gold stanchions and velvet ropes',
+      'Cocktail tables, ambient uplighting, and celebration stages',
+    ],
+    pricingNote: 'Custom Quotations Based on Venue Scale',
+    isDirect: false,
+  },
+  {
+    id: 'gender-reveal',
+    name: 'Gender Reveal Celebrations',
+    tagline: 'Whimsical "Boy or Girl?" Surprises & Welcoming New Life',
+    categoryType: 'Direct & Curated Solutions',
+    groupName: 'Baby Celebrations',
+    description: 'Create unforgettable reveals and baby showers with dual-tone pastel blush and powder blue balloon cloud arches, giant teddy bear photo-ops, question mark marquees, confetti poppers, and dessert table styling.',
+    image: '/images/gender-reveal-1.jpg',
+    features: [
+      'Split pink and blue balloon cloud installations & hoop arches',
+      'Illuminated "Boy or Girl?" / "He or She?" neon backdrops',
+      'Giant plush teddy bears, wooden chowkis & baby props',
+      'Special effects coordination for smoke cannons & balloon pop boxes',
+    ],
+    pricingNote: 'Packages from ₹2,500 + Special Reveal Effects',
+    isDirect: true,
+  },
 ];
 
 export function ServicesPage() {

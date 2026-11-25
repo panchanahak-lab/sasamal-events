@@ -9,10 +9,13 @@ import type { GalleryImage } from '@/types';
 
 const categories = [
   { id: 'all', label: 'All Events' },
+  { id: 'mandap', label: 'Mandap' },
+  { id: 'wedding', label: 'Wedding' },
   { id: 'haldi', label: 'Haldi' },
   { id: 'birthday', label: 'Birthday' },
+  { id: 'success', label: 'Success Party' },
+  { id: 'gender-reveal', label: 'Gender Reveal' },
   { id: 'engagement', label: 'Engagement' },
-  { id: 'wedding', label: 'Wedding' },
   { id: 'reception', label: 'Reception' },
   { id: 'family', label: 'Family Functions' },
 ];

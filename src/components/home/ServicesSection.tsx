@@ -52,6 +52,47 @@ function MandapIcon({ className = 'w-6 h-6' }: { className?: string }) {
   );
 }
 
+// 3b. Wedding Icon: Floral wedding arch with intertwined hearts
+function WeddingIcon({ className = 'w-6 h-6' }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M4 21V10a8 8 0 0 1 16 0v11" />
+      <path d="M9 13a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" fill="currentColor" fillOpacity="0.15" />
+      <path d="M15 13a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" fill="currentColor" fillOpacity="0.15" />
+      <path d="M2 21h20" />
+      <path d="M12 4v2" />
+    </svg>
+  );
+}
+
+// 3c. Success Party Icon: Trophy with celebration stars
+function SuccessPartyIcon({ className = 'w-6 h-6' }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M6 9H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h2" />
+      <path d="M18 9h2a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-2" />
+      <path d="M6 3h12v7a6 6 0 0 1-12 0V3z" fill="currentColor" fillOpacity="0.15" />
+      <path d="M12 16v4" />
+      <path d="M8 20h8" />
+      <circle cx="12" cy="7" r="1.5" fill="currentColor" />
+    </svg>
+  );
+}
+
+// 3d. Gender Reveal Icon: Dual balloons & celebration sparkles
+function GenderRevealIcon({ className = 'w-6 h-6' }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="9" cy="9" r="5" stroke="currentColor" fill="currentColor" fillOpacity="0.12" />
+      <circle cx="15" cy="11" r="5" stroke="currentColor" fill="currentColor" fillOpacity="0.18" />
+      <path d="M12 16v5" />
+      <path d="M10 21h4" />
+      <path d="M19 4l-2 2" />
+      <path d="M5 19l2-2" />
+    </svg>
+  );
+}
+
 // 4. Birthday Celebration Icon: Birthday cake with candles
 function BirthdayIcon({ className = 'w-6 h-6' }: { className?: string }) {
   return (
@@ -255,6 +296,18 @@ export const servicesData: ServiceCardData[] = [
   },
   {
     id: 'mandap-decoration',
+    title: 'Mandap Decoration',
+    images: [
+      '/images/hero-mandap.jpg',
+      '/images/mandap-decoration.jpg',
+      '/images/hero-destination-wedding.jpg',
+      '/images/wedding-lawn-entrance-walkway.jpg',
+    ],
+    link: '/services#wedding-mandap-decorations',
+    icon: MandapIcon,
+  },
+  {
+    id: 'wedding-decoration',
     title: 'Wedding Decoration',
     images: [
       '/images/wedding-stage-luxury-gold.jpg',
@@ -266,8 +319,8 @@ export const servicesData: ServiceCardData[] = [
       '/images/hero-mandap.jpg',
       '/images/hero-destination-wedding.jpg',
     ],
-    link: '/services#wedding-mandap-decorations',
-    icon: MandapIcon,
+    link: '/services#wedding',
+    icon: WeddingIcon,
   },
   {
     id: 'birthday-celebration',
@@ -281,6 +334,28 @@ export const servicesData: ServiceCardData[] = [
     ],
     link: '/packages',
     icon: BirthdayIcon,
+  },
+  {
+    id: 'success-party',
+    title: 'Success Party',
+    images: [
+      '/images/success-party-1.jpg',
+      '/images/success-party-2.jpg',
+      '/images/success-party-3.jpg',
+    ],
+    link: '/services#success-party',
+    icon: SuccessPartyIcon,
+  },
+  {
+    id: 'gender-reveal',
+    title: 'Gender Reveal',
+    images: [
+      '/images/gender-reveal-1.jpg',
+      '/images/gender-reveal-2.jpg',
+      '/images/gender-reveal-3.jpg',
+    ],
+    link: '/services#gender-reveal',
+    icon: GenderRevealIcon,
   },
   {
     id: 'family-functions',

@@ -6,10 +6,13 @@ import type { GalleryImage } from '@/types';
 
 const filterCategories = [
   { id: 'all', label: 'All Celebrations' },
+  { id: 'mandap', label: 'Mandap Decoration' },
+  { id: 'wedding', label: 'Wedding Celebrations' },
   { id: 'haldi', label: 'Haldi Ceremony' },
   { id: 'birthday', label: 'Birthday Parties' },
+  { id: 'success', label: 'Success Parties' },
+  { id: 'gender-reveal', label: 'Gender Reveal' },
   { id: 'engagement', label: 'Engagement & Rings' },
-  { id: 'wedding', label: 'Wedding Mandaps' },
   { id: 'reception', label: 'Reception Stages' },
   { id: 'family', label: 'Family Functions' },
 ];

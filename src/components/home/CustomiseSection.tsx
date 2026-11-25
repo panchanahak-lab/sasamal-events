@@ -12,6 +12,8 @@ const CEREMONY_TABS = [
   { id: 'ring-ceremony', label: 'Ring Ceremony', icon: '💍' },
   { id: 'haldi', label: 'Haldi & Mehendi', icon: '🌼' },
   { id: 'mandap', label: 'Wedding Mandap', icon: '🏛️' },
+  { id: 'success-party', label: 'Success Party', icon: '🏆' },
+  { id: 'gender-reveal', label: 'Gender Reveal', icon: '🍼' },
   { id: 'family', label: 'Family Functions', icon: '👨‍👩‍👧' },
   { id: 'private', label: 'Private Functions', icon: '❤️' },
 ];
