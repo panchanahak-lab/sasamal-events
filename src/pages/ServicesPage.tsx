@@ -149,7 +149,7 @@ const otherCategories = [
     categoryType: 'Direct & Curated Solutions',
     groupName: 'Baby Celebrations',
     description: 'Create unforgettable reveals and baby showers with dual-tone pastel blush and powder blue balloon cloud arches, giant teddy bear photo-ops, question mark marquees, confetti poppers, and dessert table styling.',
-    image: '/images/gender-reveal-1.jpg',
+    image: '/images/gender-reveal-marquee-question.jpg',
     features: [
       'Split pink and blue balloon cloud installations & hoop arches',
       'Illuminated "Boy or Girl?" / "He or She?" neon backdrops',
