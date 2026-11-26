@@ -372,6 +372,11 @@ export const servicesData: ServiceCardData[] = [
     id: 'private-functions',
     title: 'Private Functions',
     images: [
+      '/images/private-crescent-moon-floral.jpg',
+      '/images/private-better-together-arch.jpg',
+      '/images/private-anniversary-floral-ring.jpg',
+      '/images/private-heart-balloon-terrace.jpg',
+      '/images/private-red-carpet-marquee.jpg',
       '/images/hero-private-functions.jpg',
       '/images/private-functions-2.jpg',
       '/images/private-functions.jpg',

@@ -18,6 +18,7 @@ const categories = [
   { id: 'engagement', label: 'Engagement' },
   { id: 'reception', label: 'Reception' },
   { id: 'family', label: 'Family Functions' },
+  { id: 'private', label: 'Private Functions' },
 ];
 
 export function GalleryPreview() {

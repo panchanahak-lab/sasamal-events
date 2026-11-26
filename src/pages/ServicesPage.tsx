@@ -115,7 +115,7 @@ const otherCategories = [
     categoryType: 'Curated Intimate Celebrations',
     groupName: 'Private Functions',
     description: 'Planning a surprise marriage proposal, terrace candlelit dinner, or intimate anniversary? Sasamal Events designs intimate environments with ambient lanterns, rose petal paths, romantic candles, and intimate seating for two.',
-    image: 'https://images.unsplash.com/photo-1520854221256-17451cc331bf?w=1000&q=80&fit=crop',
+    image: '/images/private-anniversary-floral-ring.jpg',
     features: [
       'Marry Me marquee letters and ambient candlelit walkways',
       'Terrace canopies with sheer drapes and warm lighting',

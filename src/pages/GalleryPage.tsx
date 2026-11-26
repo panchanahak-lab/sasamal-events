@@ -15,6 +15,7 @@ const filterCategories = [
   { id: 'engagement', label: 'Engagement & Rings' },
   { id: 'reception', label: 'Reception Stages' },
   { id: 'family', label: 'Family Functions' },
+  { id: 'private', label: 'Private Functions' },
 ];
 
 export function GalleryPage() {
